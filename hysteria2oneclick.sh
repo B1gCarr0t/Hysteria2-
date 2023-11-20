@@ -73,12 +73,12 @@ if [ "$PORT_HOPPING" == "2" ]; then
   PORT_RANGE_FORMATTED=$(echo "$PORT_HOPPING_RANGE" | sed 's/-/:/')
   
   # 配置iptables的DNAT端口转发规则
-  sudo iptables -t nat -F && iptables -t nat -A PREROUTING -i $DEFAULT_INTERFACE -p udp --dport $PORT_RANGE_FORMATTED -j DNAT --to-destination 127.0.0.1:$LISTEN_PORT
+  sudo iptables -t nat -F && iptables -t nat -A PREROUTING -i $DEFAULT_INTERFACE -p udp --dport $PORT_RANGE_FORMATTED -j DNAT --to-destination $LISTEN_PORT
 
   # 配置ip6tables的DNAT端口转发规则
-  ip6tables -t nat -A PREROUTING -i $DEFAULT_INTERFACE -p udp --dport $PORT_RANGE_FORMATTED -j DNAT --to-destination [::]:$LISTEN_PORT
+  ip6tables -t nat -A PREROUTING -i $DEFAULT_INTERFACE -p udp --dport $PORT_RANGE_FORMATTED -j DNAT --to-destination $LISTEN_PORT
 
-  echo "已为用户配置iptables和ip6tables的DNAT端口转发规则，将端口段 $PORT_HOPPING_RANGE 转发到 127.0.0.1:$LISTEN_PORT 和 [::]:$LISTEN_PORT。"
+  echo "已为用户配置iptables和ip6tables的DNAT端口转发规则，将端口段 $PORT_HOPPING_RANGE 转发到 $LISTEN_PORT "
 fi
 
 # 步骤6: 询问用户证书类型和相关信息
