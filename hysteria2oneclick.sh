@@ -64,8 +64,15 @@ if [ "$PORT_HOPPING" == "2" ]; then
       echo "iptables和ip6tables安装失败，请检查网络连接或手动执行 'apt-get install iptables ip6tables'。"
       exit 1
     fi
+  # 初始化iptables的DNAT规则
+  echo "正在初始化iptables..."
+  if sudo iptables -t nat -F; then
+  echo "初始化iptables成功！"
+  else
+  echo "初始化iptables失败，请手动执行 'sudo iptables -t nat -F'。"
+  exit 1
   fi
-
+fi
   # 询问选择开启端口跳跃的用户希望开启的端口段
   read -p "请输入希望开启的端口段（默认为5000-6000）: " PORT_HOPPING_RANGE
   PORT_HOPPING_RANGE=${PORT_HOPPING_RANGE:-"5000-6000"}
