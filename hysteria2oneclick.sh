@@ -189,7 +189,13 @@ if systemctl restart hysteria-server.service; then
 else
   echo "Hysteria2服务重启失败，请手动执行 'systemctl restart hysteria-server.service'。"
 fi
-
+#将Hysteria2设置为开机启动
+echo "正在将Hysteria2设置为开启启动..."
+if systemctl enable hysteria-server.service; then
+  echo "已成功将Hysteria2设置为开机启动！"
+else
+  echo "Hysteria2设置开机启动失败，请手动执行 'systemctl enable hysteria-server.service'。"
+fi
 # 检查Hysteria2服务的运行状态
 echo "正在检查Hysteria2服务的运行状态..."
 if systemctl is-active --quiet hysteria-server.service && journalctl -u hysteria-server.service | grep -q "server up and running"; then
