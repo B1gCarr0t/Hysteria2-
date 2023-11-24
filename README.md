@@ -9,3 +9,7 @@ CentOS&Fedora使用这个脚本
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/B1gCarr0t/Hysteria2-/main/ForCentOS%26Fedora.sh)
 ```
+卸载使用这个脚本
+```
+bash <(curl -fsSL https://get.hy2.sh/) --remove
+```
