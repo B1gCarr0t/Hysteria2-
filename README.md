@@ -5,7 +5,7 @@ Debian&ubuntu使用这个脚本
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/B1gCarr0t/Hysteria2-/main/hysteria2oneclick.sh)
 ```
-ForCentOS&Fedora使用这个脚本
+CentOS&Fedora使用这个脚本
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/B1gCarr0t/Hysteria2-/main/ForCentOS%26Fedora.sh)
 ```
