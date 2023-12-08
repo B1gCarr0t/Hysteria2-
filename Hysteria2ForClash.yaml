@@ -35,22 +35,22 @@ dns:
       - 240.0.0.0/4
       - 0.0.0.0/32
 proxies:
-	- name: Hysteria2
-	  type: hysteria2
-	  server: 
-	  up: 30 mbps
-      down: 100 mbps
-      port: 
-      password: 
-      sni: 
-      fastOpen: true
-      lazy: true
-      skip-cert-verify: true
+  - name: 节点选择
+    type: hysteria2
+    server: 
+    up: 30 mbps
+    down: 100 mbps
+    port: 
+    password: 
+    sni: 
+    fastOpen: true
+    lazy: true
+    skip-cert-verify: true
 proxy-groups:
-	- name: 节点选择
-	  type: select
-	  proxies:
-	  	-  Hysteria2
+  - name: 节点选择
+    type: select
+    proxies:
+      -  Hysteria2
 rules:
   - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
