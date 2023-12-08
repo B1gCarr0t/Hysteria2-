@@ -3,10 +3,13 @@
 bold=$(tput bold)
 green=$(tput setaf 2)
 reset=$(tput sgr0)
-  
-echo "${bold}${green}欢迎使用由BigCarr0t大胡萝卜提供的Hysteria2一键安装脚本！${reset}"
-echo "${bold}${green}特别感谢由Asahi 一米六五大帅哥提供的测试环境${reset}"
-echo "${bold}${green}特别感谢由 河滨 岩石 提供的URI模版${reset}"
+
+echo "${bold}${green}**************************************************************${reset}"
+echo "${bold}${green}**欢迎使用由 BigCarr0t 大胡萝卜 提供的Hysteria2一键安装脚本***${reset}"
+echo "${bold}${green}****** 特别感谢由 Asahi 一米六五大帅哥 提供的测试环境  *******${reset}"
+echo "${bold}${green}**********特别感谢由 大头贴 super 提供的测试环境**************${reset}"
+echo "${bold}${green}***********特别感谢由 河滨 岩石 提供的URI模版*****************${reset}"
+echo "${bold}${green}**************************************************************${reset}"
 read -p "按 Enter 键继续..."
 
 #应要求添加URI再显示功能
